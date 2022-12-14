@@ -3,6 +3,7 @@
 <b>User Passw:</b> admin1<br>
 
 # NepalNews Revamp - LeapFrog Student partner program
+The website details is in screenshot folder.<br><br>
 This project is a Nepali news portal with mordern style and features.<br><br>
 
 Website selected for revamp: https://www.nepalnews.com/ <br>
