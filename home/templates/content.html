@@ -1,0 +1,283 @@
+{% load static %}
+<style>
+    .colorWhite{
+      color: white;
+    }
+    .titleFont {
+        font-size: 1.5rem;
+    }
+  
+</style>
+    <section class="headding-news" style="background-color: black;">
+        <div class="container">
+            <div class="row row-margin">
+                <div class="col-sm-6 col-padding" style="padding: 20px">
+                    <div class="post-wrapper post-grid-6 wow fadeIn" data-wow-duration="2s">
+                        <div class="post-thumb img-zoom-in">
+                            <a href="#">
+                                <img class="entry-thumb-top" src="{% static '' %}images/slider/slide-11.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="post-info">
+                            <span class="color-3">SPORTS </span>
+                            <div class="post-editor-date">
+                                <!-- post date -->
+                                <div class="post-date">
+                                    <i class="pe-7s-clock"></i> Oct 6, 2016
+                                </div>
+                                <!-- post comment -->
+                                <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                <!-- read more -->
+                                <a class=" colorWhitereadmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+      
+                <div class="col-sm-6 col-padding"  style="padding: 20px">
+                    <div class="post-wrapper post-grid-7 wow fadeIn" data-wow-duration="2s">
+                        <div class="post-thumb img-zoom-in">
+                            <a href="#">
+                                <img class="entry-thumb-top" src="{% static '' %}images/slider/slide-12.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="post-info">
+                            <span class="color-5">BUSINESS</span>
+                            <div class="post-editor-date">
+                                <!-- post date -->
+                                <div class="post-date">
+                                    <i class="pe-7s-clock"></i> Oct 6, 2016
+                                </div>
+                                <!-- post comment -->
+                                <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                <!-- read more -->
+                                <a class=" colorWhitereadmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+  
+      
+        </div>
+    </section>
+    <!-- Latest news Area
+        ============================================ -->
+    <section class="article-post-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="articale-list">
+                        <h3 class="category-headding colorWhite" >Latest News </h3>
+                        <div class="headding-border"></div>
+
+                        {% for rs in article %}  
+
+                      <div class="post-style2 wow fadeIn" data-wow-duration="1s">
+                            <a href="#"><img src="{{rs.image.url}}" width="300" height="200" alt=""></a>
+                            <div class="post-style2-detail">
+                                <h3><a href="#" class="titleFont" title="">{{rs.title}}</a></h3>
+                                <div class="date">
+                                    <ul>
+                                        <li><img src="{% static '' %}images/comment-01.jpg" class="img-responsive" alt=""></li>
+                                        <li>By <a title="" href="#"><span style="color: #229AD6;">{{rs.writer}}</span></a> --</li>
+                                        <li><a title="" href="#">{{rs.create_at}}</a> --</li>
+                                    </ul>
+                                </div>
+                                <p>{{rs.description}}</p>
+                                <button type="button" class="btn btn-style">Read more</button>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+                        <!--Post list-->
+                     </div>
+                </div>
+                <div class="col-sm-4 left-padding" >
+                    <div class="input-group search-area" >
+                        <!-- search area -->
+                        <input type="text" class="form-control" placeholder="Search articles here ..." name="q">
+                        <div class="input-group-btn">
+                            <button class="btn btn-search" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    <!-- /.search area -->
+                    <!-- online vote -->
+                    <div class="online-vote">
+                        <h3 class="category-headding colorWhite " >ONLINE VOTE</h3>
+                        <div class="headding-border"></div>
+                        <div class="vote-inner">
+                            <p>Should MCC be implemented in Nepal ?  </p>
+                            <div class="radio-btn">
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio">Yes</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio">No</label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio">No comment</label>
+                            </div>
+                            <button type="button" class="btn btn-style">Success</button>
+                        </div>
+                    </div>
+                    <!-- /.online vote -->
+    
+                    <!-- twitter feed -->
+                    <h3 class="category-headding colorWhite">TWITTER FEED</h3>
+                    <div class="headding-border"></div>
+                    <div class="feed-inner">
+                        <p>काभ्रे बस दुर्घटना : मृतकको संख्या १८ पुग्यो, २१ घाइते [अपडेट]</p>
+                        <div class="feed-footer">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <cite><a href="#" style="font-size: smaller;" class="social-feed__author">@nepalnews</a></cite>
+                            <span class="feed-date">7 hours ago</span>
+                        </div>
+                        <hr>
+                        <p>बाँके र चितवनका पत्रकारमाथि भएको दुव्र्यवहार, हातपात र धम्कीका घटनाप्रति नेपाल </p>
+                        <div class="feed-footer">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <cite><a href="#" class="social-feed__author" style="font-size: smaller;" >@Federation of Nepal</a></cite>
+                            <span class="feed-date">21 hours ago</span>
+                        </div>
+                        <hr>
+                    
+                    </div>
+                    <!-- /.twitter feed -->
+                    <!-- comments -->
+                    <div class="latest-comments-inner">
+                        <h3 class="category-headding colorWhite ">LATEST COMMENT</h3>
+                        <div class="headding-border"></div>
+                        <!-- latest comment post -->
+                        <div class="post-style2 latest-com">
+                            <img src="{% static '' %}images/federation.jpg" alt="">
+                            <div class="latest-com-detail">
+                                <h5><a href="#" title="">Federation of Nepali Journalists</a></h5>
+                                <span>Nec sagittis sem nibh dictionary...</span>
+                                <p>Proin gravida nibh vel velit auctor aliquet. </p>
+                            </div>
+                        </div>
+                        <!-- latest comment post -->
+                        <div class="post-style2 latest-com">
+                            <img src="{% static '' %}images/soceity.jpg" alt="">
+                            <div class="latest-com-detail">
+                                <h5><a href="#" title="">Society of Economic Journalists-Nepal (SEJON)</a></h5>
+                                <span>Nec sagittis sem nibh dictionary...</span>
+                                <p>Proin gravida nibh vel velit auctor aliquet. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="latest-comments-inner">
+                        <!-- right content wrapper -->
+                        <!-- social icon -->
+                        <h3 class="category-headding colorWhite ">SOCIAL PIXEL</h3>
+                        <div class="headding-border"></div>
+                        <div class="social">
+                            <ul>
+                                <li><a href="#" class="facebook"><i class="fa  fa-facebook"></i><span>3987</span> </a></li>
+                                <li><a href="#" class="twitter"><i class="fa  fa-twitter"></i><span>3987</span></a></li>
+                                <li><a href="#" class="google"><i class="fa  fa-google-plus"></i><span>3987</span></a></li>
+                                <li><a href="#" class="flickr"><i class="fa fa-flickr"></i><span>3987</span> </a></li>
+                            </ul>
+                        </div>
+                        <!-- /.social icon -->
+                        <div class="banner-add">
+                            <!-- add -->
+                            <span class="add-title">- Advertisement -</span>
+                            <a href="#"><img src="{% static '' %}images/ad-banner1.jpg" height="200" width="300" style="object-fit: cover;" class="img-responsive center-block" alt=""></a>
+                        </div>
+                
+                        <!-- / tab -->
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <section class="video-post-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="category-headding ">Featured Video</h3>
+                    <div class="headding-border"></div>
+                </div>
+            </div>
+            <div class="row">
+                <iframe width="1080" height="500" src="https://www.youtube.com/embed/wqDGJpkj-M8" title="Talk of the Town | Ep. 03 | In conversation with Wangden Sherpa @Wangden Sherpa  | NepalNews" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                
+
+            </div>
+            <!-- /.video -->
+        </div>
+    </section>
+
+    <section class="">
+        <div class="container">
+            <div class="row ">
+                <div id="content-slide-4" class="owl-carousel">
+              {% for rs in interest %}
+                    <div class="item"  style="padding: 10px">
+                        <div class="post-wrapper post-grid-10 wow fadeIn" data-wow-duration="2s">
+                            <div class="post-thumb img-zoom-in">
+                                <a href="#">
+                                    <img class="entry-thumb-bottom" src="{{rs.image.url}}" height="150" style="object-fit: cover;" alt="">
+                                </a>
+                            </div>
+                            <div class="post-info">
+                                <span >{{rs.title}}</span>
+                                <div class="post-editor-date">
+                                    <!-- post date -->
+                                    <div class="post-date">
+                                        <i class="pe-7s-clock"></i>{{rs.create_at}}
+                                    </div>
+                                    <!-- post comment -->
+                                    <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                    <!-- read more -->
+                                    <a class=" colorWhitereadmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{% endfor %}
+
+                </div>
+            </div>
+      
+            <!-- /.video -->
+        </div>
+    </section>
+
+
+
+
+    <!-- /.sub footer -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="{% static '' %}js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="{% static '' %}js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script type="text/javascript" src="{% static '' %}js/metisMenu.min.js"></script>
+    <!-- Scrollbar js -->
+    <script type="text/javascript" src="{% static '' %}js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- animate js -->
+    <script type="text/javascript" src="{% static '' %}js/wow.min.js"></script>
+    <!-- Newstricker js -->
+    <script type="text/javascript" src="{% static '' %}js/jquery.newsTicker.js"></script>
+    <!--  classify JavaScript -->
+    <script type="text/javascript" src="{% static '' %}js/classie.js"></script>
+    <!-- owl carousel js -->
+    <script type="text/javascript" src="{% static '' %}owl-carousel/owl.carousel.js"></script>
+    <!-- youtube js -->
+    <script type="text/javascript" src="{% static '' %}js/RYPP.js"></script>
+    <!-- jquery ui js -->
+    <script type="text/javascript" src="{% static '' %}js/jquery-ui.js"></script>
+    <!-- form -->
+    <script type="text/javascript" src="{% static '' %}js/form-classie.js"></script>
+    <!-- custom js -->
+    <script type="text/javascript" src="{% static '' %}js/custom.js"></script>
+</body>
+
+
+<!-- Mirrored from news365htmllatest.bdtask.com/Demo/DemoNews365/home-style-three.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Dec 2022 05:00:16 GMT -->
+</html>
