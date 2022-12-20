@@ -1,0 +1,238 @@
+{% extends 'homebase.html' %}
+{% load i18n %}
+{% block title %} User Login  {{ setting.title }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+
+{% block body %}
+{% load static %}
+
+<section class="block-inner" style="background-color: black;">
+	<div class="container" style="background-color: black;">
+		<div class="row">
+			<div class="col-sm-12" >
+				<h1 style="color: white;">{{magazine.title}}</h1>
+			
+			</div>
+		</div>
+	</div>
+</section>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+
+
+			{% for rs in articles %}
+		    <div class="container">
+				<div class="row">
+					<div class="col-sm-8">
+						<article class="content">
+							<div class="post-thumb">
+								<img src="{{rs.image.url}}" class="img-responsive post-image" alt="">
+							
+							</div>
+							<h1 style="color: white;">{{rs.title}}</h1>
+							<div class="date">
+								<ul>
+									<li>By <a title="" href="#"><span style="color: #229ad6;">{{rs.writer}}</span></a> --</li>
+									<li><a title="" href="#">11 Nov 2015</a> --</li>
+								</ul>
+							</div>
+							
+						
+							<p style="color: white;">{{rs.content  | safe}} </p>
+						
+
+							<div class="related-news-inner">
+								<h3 class="category-headding " style="color: white;">Art Works</h3>
+								<div class="headding-border"></div>
+								<div class="row">
+									<div id="content-slide-5" class="owl-carousel">
+										<!-- item-1 -->
+										<div class="item">
+											<div class="row rn_block">
+										
+											{% for rs in arts%}
+											<div class="col-xs-6 col-md-4 col-sm-4 padd">
+												<div class="post-wrapper wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s">
+													<!-- image -->
+													<div class="post-thumb">
+														<a href="#">
+															<img class="img-responsive" src="{{rs.image.url}}" alt="">
+														</a>
+													</div>
+												
+												</div>
+												<div class="post-title-author-details">
+													<h4><a href="#">Art By : {{ rs.artist}}</a></h4>
+													<div class="post-editor-date">
+														<div class="post-date">
+															<i class="pe-7s-clock"></i> {{rs.create_at}}
+														</div>
+														<div class="post-author-comment"><i class="pe-7s-comment"></i> {{rs.id}} </div>
+													</div>
+												</div>
+											</div>
+											{% endfor %}
+
+
+
+											</div>
+										</div>
+									
+									</div>
+								</div>
+							</div>
+							<!-- form
+								============================================ -->
+							<div class="form-area">
+								<h3 class="category-headding " style="color: white;">LEAVE A COMMENT</h3>
+								<div class="headding-border"></div>
+								<form>
+									<div class="row">
+										<div class="col-sm-6">
+											<span class="input">
+													<input class="input_field" type="text" id="input-1">
+													<label class="input_label" for="input-1">
+														<span class="input_label_content" data-content="Your Name">Your Name</span>
+											</label>
+											</span>
+										</div>
+										<div class="col-sm-6">
+											<span class="input">
+													<input class="input_field" type="text" id="input-2">
+													<label class="input_label" for="input-2">
+														<span class="input_label_content" data-content="Your Email">Your Email</span>
+											</label>
+											</span>
+										</div>
+										<div class="col-sm-12">
+											<span class="input">
+													<textarea class="input_field" id="message"></textarea>
+													<label class="input_label" for="message">
+														<span class="input_label_content" data-content="Your Email">Your Message</span>
+											</label>
+											</span>
+											<button type="button" class="btn btn-style">Post Your Comment</button>
+										</div>
+									</div>
+								</form>
+							</div>
+				
+						</article>
+					</div>
+				
+				</div>
+			</div>
+			{% endfor %}
+	
+		</div>
+		<div class="col-sm-4">
+
+			{% for rs in magazine2 %}
+			<div class="post-style1">
+				<div class="post-wrapper wow fadeIn" data-wow-duration="1s">
+					<!-- post image -->
+					<a href="#"><img src="{{rs.coverimage.url}}" class="img-responsive" alt=""></a>
+					<div class="post-info meta-info-rn">
+					
+					</div>
+				</div>
+				<!-- post title -->
+				<h4><a href="#">{{rs.title}}</a></h4>
+				<div class="post-title-author-details">
+					<div class="date">
+						<ul>
+							<li><img src="{% static '' %}images/comment-01.jpg" class="img-responsive" alt=""></li>
+							<li>By<a title="" href="#" ><span style="color: #229ad6;">{{rs.editor}}</span></a> --</li>
+							<li><a title="" href="#">{{rs.create_at}}</a> --</li>
+						</ul>
+					</div>
+					<p>{{ rs.detail |safe}}</a></p>
+				</div>
+			</div>
+		
+			{% endfor %}
+		</div>
+		<aside class="col-sm-4 left-padding">
+			<div class="input-group search-area c-search">
+				<!-- search area -->
+				<input type="text" class="form-control" placeholder="Search articles here ..." name="q">
+				<div class="input-group-btn">
+					<button class="btn btn-search" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+				</div>
+			</div>
+			<!-- social icon -->
+			<h3 class="category-headding " style="color: white;">SOCIAL PIXEL</h3>
+			<div class="headding-border"></div>
+			<div class="social">
+				<ul>
+					<li><a href="#" class="facebook"><i class="fa  fa-facebook"></i><span>3987</span> </a></li>
+					<li><a href="#" class="twitter"><i class="fa  fa-twitter"></i><span>3987</span></a></li>
+					<li><a href="#" class="google"><i class="fa  fa-google-plus"></i><span>3987</span></a></li>
+					<li><a href="#" class="flickr"><i class="fa fa-flickr"></i><span>3987</span> </a></li>
+				</ul>
+			</div>
+
+			<div class="banner-add">
+				<!-- add -->
+				<span class="add-title" style="font-size: medium; font-weight: bold; color: #229ad6;  padding: 4px;">Magazine from</span>
+				<a href="#"><img src="{{school.banner.url}}" class="img-responsive center-block" alt=""></a>
+			</div>
+		
+			<!-- slider widget -->
+			<div class="widget-slider-inner">
+				<h3 class="category-headding " style="color: white;">Artworks</h3>
+				<div class="headding-border"></div>
+				<div id="widget-slider" class="owl-carousel owl-theme">
+					<!-- widget item -->
+
+					{% for rs in arts %}
+					<div class="item">
+						<a href="#"><img src="{{rs.image.url}}" alt=""></a>
+						<h4><a href="#">Art By: {{rs.artist}}</a></h4>
+						<div class="date">
+							<ul>
+								<li><a title="" href="#">{{rs.create_at}}</a></li>
+							</ul>
+						</div>
+					</div>
+					{% endfor %}
+				
+			
+				</div>
+			</div>
+		</aside>
+	</div>
+	<!-- pagination -->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<ul class="pagination">
+					<li>
+						<a href="#" class="prev">
+							<i class="pe-7s-angle-left"></i>
+						</a>
+					</li>
+					<li> <a href="#">1</a></li>
+					<li> <a href="#" class="active">2</a></li>
+					<li> <a href="#">3</a></li>
+					<li> <a href="#">4</a></li>
+					<li> ... </li>
+					<li> <a href="#">15</a></li>
+					<li>
+						<a href="#" class="next"> <i class="pe-7s-angle-right"></i></a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-12">
+				<div class="banner">
+					<img src="{% static '' %}images/top-bannner2.jpg" class="img-responsive center-block" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

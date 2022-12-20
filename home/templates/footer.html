@@ -7,9 +7,9 @@
                     <!-- address  -->
                     <img src="{% static '' %}images/footer-logo1.png" class="img-responsive" alt="">
                     <address>
-                        14L.E Goulburn St, Sydney 2000NSW
-                        <br> Tell: 01922296392
-                        <br> Email: bdtask@gmail.com
+                        {{setting.address}}
+                        <br> Tell: {{setting.phone}}
+                        <br> Email: {{setting.email}}
                     </address>
                 </div>
                 <!-- /.address  -->
@@ -25,7 +25,7 @@
                                 <li><i class="fa fa-dot-circle-o"></i><a href="#">Pressroom</a></li>
                                 <li><i class="fa fa-dot-circle-o"></i><a href="#">Advertise online</a></li>
                                 <li><i class="fa fa-dot-circle-o"></i><a href="#">Language</a></li>
-                                <li><i class="fa fa-dot-circle-o"></i><a href="#">Being Part</a></li>
+                                <li><i class="fa fa-dot-circle-o"></i><a href="/admin/magazine/magazine/1/change/">Create Magazine</a></li>
                             </ul>
                         </div>
                     </div>

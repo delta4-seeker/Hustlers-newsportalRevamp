@@ -8,63 +8,10 @@
     }
   
 </style>
-    <section class="headding-news" style="background-color: black;">
-        <div class="container">
-            <div class="row row-margin">
-                <div class="col-sm-6 col-padding" style="padding: 20px">
-                    <div class="post-wrapper post-grid-6 wow fadeIn" data-wow-duration="2s">
-                        <div class="post-thumb img-zoom-in">
-                            <a href="#">
-                                <img class="entry-thumb-top" src="{% static '' %}images/slider/slide-11.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="post-info">
-                            <span class="color-3">SPORTS </span>
-                            <div class="post-editor-date">
-                                <!-- post date -->
-                                <div class="post-date">
-                                    <i class="pe-7s-clock"></i> Oct 6, 2016
-                                </div>
-                                <!-- post comment -->
-                                <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                                <!-- read more -->
-                                <a class=" colorWhitereadmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-      
-                <div class="col-sm-6 col-padding"  style="padding: 20px">
-                    <div class="post-wrapper post-grid-7 wow fadeIn" data-wow-duration="2s">
-                        <div class="post-thumb img-zoom-in">
-                            <a href="#">
-                                <img class="entry-thumb-top" src="{% static '' %}images/slider/slide-12.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="post-info">
-                            <span class="color-5">BUSINESS</span>
-                            <div class="post-editor-date">
-                                <!-- post date -->
-                                <div class="post-date">
-                                    <i class="pe-7s-clock"></i> Oct 6, 2016
-                                </div>
-                                <!-- post comment -->
-                                <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
-                                <!-- read more -->
-                                <a class=" colorWhitereadmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-  
-      
-        </div>
-    </section>
     <!-- Latest news Area
         ============================================ -->
-    <section class="article-post-inner">
+    <section class="article-post-inner" style="margin-top: 40px;">
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">
@@ -87,6 +34,32 @@
                                 </div>
                                 <p>{{rs.description}}</p>
                                 <button type="button" class="btn btn-style">Read more</button>
+
+                                <!-- Button trigger modal -->
+                                <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-style" style="margin-left: 10px;">Play</button>
+
+                                <div class="modal" id="exampleModal" tabindex="-1" role="dialog">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title">{{rs.title}}</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <audio controls style="width:100%">
+                                            <source src="{{rs.audio.url}}" type="audio/mpeg">
+                                            Your browser does not support the audio element.
+                                          </audio>
+                                  
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button"  data-dismiss="modal" class="btn btn-primary" style="background-color: red; border: none;  color: white;">Close</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                             </div>
                         </div>
 
@@ -211,7 +184,60 @@
             <!-- /.video -->
         </div>
     </section>
+    <section class="headding-news" style="background-color: black;">
+        <div class="container">
+            <div class="row row-margin">
+                <div class="col-sm-6 col-padding" style="padding: 20px">
+                    <div class="post-wrapper post-grid-6 wow fadeIn" data-wow-duration="2s">
+                        <div class="post-thumb img-zoom-in">
+                            <a href="#">
+                                <img class="entry-thumb-top" src="{% static '' %}images/slider/slide-11.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="post-info">
+                            <span class="color-3">SPORTS </span>
+                            <div class="post-editor-date">
+                                <!-- post date -->
+                                <div class="post-date">
+                                    <i class="pe-7s-clock"></i> Oct 6, 2016
+                                </div>
+                                <!-- post comment -->
+                                <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                <!-- read more -->
+                                <a class=" colorWhitereadmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+      
+                <div class="col-sm-6 col-padding"  style="padding: 20px">
+                    <div class="post-wrapper post-grid-7 wow fadeIn" data-wow-duration="2s">
+                        <div class="post-thumb img-zoom-in">
+                            <a href="#">
+                                <img class="entry-thumb-top" src="{% static '' %}images/slider/slide-12.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="post-info">
+                            <span class="color-5">BUSINESS</span>
+                            <div class="post-editor-date">
+                                <!-- post date -->
+                                <div class="post-date">
+                                    <i class="pe-7s-clock"></i> Oct 6, 2016
+                                </div>
+                                <!-- post comment -->
+                                <div class="post-author-comment"><i class="pe-7s-comment"></i> 13 </div>
+                                <!-- read more -->
+                                <a class=" colorWhitereadmore pull-right" href="#"><i class="pe-7s-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+  
+      
+        </div>
+    </section>
     <section class="">
         <div class="container">
             <div class="row ">

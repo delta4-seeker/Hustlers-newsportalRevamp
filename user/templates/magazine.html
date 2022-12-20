@@ -1,0 +1,180 @@
+{% extends 'homebase.html' %}
+{% load i18n %}
+{% block title %} User Login  {{ setting.title }} {% endblock %}
+{% block description %} {{ setting.description }} {% endblock %}
+{% block keywords %} {{ setting.keywords }} {% endblock %}
+
+
+{% block body %}
+{% load static %}
+
+<section class="block-inner" style="background-color: black;">
+	<div class="container" style="background-color: black;">
+		<div class="row">
+			<div class="col-sm-12" >
+				<h1 style="color: white;">School Magazines</h1>
+			
+			</div>
+		</div>
+	</div>
+</section>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+
+
+			{% for rs in magazine1 %}
+			<div class="post-style1">
+				<div class="post-wrapper wow fadeIn" data-wow-duration="1s">
+					<!-- post image -->
+					<a href="/user/magazine/{{rs.id}}"><img src="{{rs.coverimage.url}}"  class="img-responsive" alt=""></a>
+					<div class="post-info meta-info-rn">
+						
+					</div>
+				</div>
+				<!-- post title -->
+				<h4><a href="#">{{rs.title}}</a></h4>
+				<div class="post-title-author-details">
+					<div class="date">
+						<ul>
+							<li><img src="{% static '' %}images/comment-01.jpg" class="img-responsive" alt=""></li>
+							<li>By<a title="" href="#" ><span style="color: #229ad6;">{{rs.editor}}</span></a> --</li>
+							<li><a title="" href="#">{{rs.create_at}}</a> --</li>
+						</ul>
+					</div>
+					<p>{{ rs.detail |safe}}</a></p>
+				</div>
+			</div>
+		
+			{% endfor %}
+	
+		</div>
+		<div class="col-sm-4">
+
+			{% for rs in magazine2 %}
+			<div class="post-style1">
+				<div class="post-wrapper wow fadeIn" data-wow-duration="1s">
+					<!-- post image -->
+					<a href="#"><img src="{{rs.coverimage.url}}" class="img-responsive" alt=""></a>
+					<div class="post-info meta-info-rn">
+					
+					</div>
+				</div>
+				<!-- post title -->
+				<h4><a href="#">{{rs.title}}</a></h4>
+				<div class="post-title-author-details">
+					<div class="date">
+						<ul>
+							<li><img src="{% static '' %}images/comment-01.jpg" class="img-responsive" alt=""></li>
+							<li>By<a title="" href="#" ><span style="color: #229ad6;">{{rs.editor}}</span></a> --</li>
+							<li><a title="" href="#">{{rs.create_at}}</a> --</li>
+						</ul>
+					</div>
+					<p>{{ rs.detail |safe}}</a></p>
+				</div>
+			</div>
+		
+			{% endfor %}
+		</div>
+		<aside class="col-sm-4 left-padding">
+			<div class="input-group search-area c-search">
+				<!-- search area -->
+				<input type="text" class="form-control" placeholder="Search articles here ..." name="q">
+				<div class="input-group-btn">
+					<button class="btn btn-search" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+				</div>
+			</div>
+			<!-- social icon -->
+			<h3 class="category-headding " style="color: white;">SOCIAL PIXEL</h3>
+			<div class="headding-border"></div>
+			<div class="social">
+				<ul>
+					<li><a href="#" class="facebook"><i class="fa  fa-facebook"></i><span>3987</span> </a></li>
+					<li><a href="#" class="twitter"><i class="fa  fa-twitter"></i><span>3987</span></a></li>
+					<li><a href="#" class="google"><i class="fa  fa-google-plus"></i><span>3987</span></a></li>
+					<li><a href="#" class="flickr"><i class="fa fa-flickr"></i><span>3987</span> </a></li>
+				</ul>
+			</div>
+
+			<div class="banner-add">
+				<!-- add -->
+				<span class="add-title">- Advertisement -</span>
+				<a href="#"><img src="{% static '' %}images/ad-banner.jpg" class="img-responsive center-block" alt=""></a>
+			</div>
+		
+			<!-- slider widget -->
+			<div class="widget-slider-inner">
+				<h3 class="category-headding ">Slider Widget</h3>
+				<div class="headding-border"></div>
+				<div id="widget-slider" class="owl-carousel owl-theme">
+					<!-- widget item -->
+					<div class="item">
+						<a href="#"><img src="{% static '' %}images/slider-widget-1.jpg" alt=""></a>
+						<h4><a href="#">For good results must be make good plan</a></h4>
+						<div class="date">
+							<ul>
+								<li>By<a title="" href="#"><span>Jone Kilna</span></a> --</li>
+								<li><a title="" href="#">11 Nov 2015</a></li>
+							</ul>
+						</div>
+						<p>Dhaka: Dhaka Metropolitan Sessions a Judge Court on Wednesday issued warrants for the arrest of 29 BNP leaders, including some ina senior leaders...</p>
+					</div>
+					<!-- widget item -->
+					<div class="item">
+						<a href="#"><img src="{% static '' %}images/slider-widget-2.jpg" alt=""></a>
+						<h4><a href="#">Dog invason sparks chaos at IPL match</a></h4>
+						<div class="date">
+							<ul>
+								<li>By<a title="" href="#"><span>Jone Kilna</span></a> --</li>
+								<li><a title="" href="#">11 Nov 2015</a></li>
+							</ul>
+						</div>
+						<p>Dhaka: Dhaka Metropolitan Sessions a Judge Court on Wednesday issued warrants for the arrest of 29 BNP leaders, including some ina senior leaders ...</p>
+					</div>
+					<!-- widget item -->
+					<div class="item">
+						<a href="#"><img src="{% static '' %}images/slider-widget-3.jpg" alt=""></a>
+						<h4><a href="#">For good results must be make good plan</a></h4>
+						<div class="date">
+							<ul>
+								<li>By<a title="" href="#"><span>Jone Kilna</span></a> --</li>
+								<li><a title="" href="#">11 Nov 2015</a></li>
+							</ul>
+						</div>
+						<p>Dhaka: Dhaka Metropolitan Sessions a Judge Court on Wednesday issued warrants for the arrest of 29 BNP leaders, including some ina senior leaders ...</p>
+					</div>
+				</div>
+			</div>
+		</aside>
+	</div>
+	<!-- pagination -->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<ul class="pagination">
+					<li>
+						<a href="#" class="prev">
+							<i class="pe-7s-angle-left"></i>
+						</a>
+					</li>
+					<li> <a href="#">1</a></li>
+					<li> <a href="#" class="active">2</a></li>
+					<li> <a href="#">3</a></li>
+					<li> <a href="#">4</a></li>
+					<li> ... </li>
+					<li> <a href="#">15</a></li>
+					<li>
+						<a href="#" class="next"> <i class="pe-7s-angle-right"></i></a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-12">
+				<div class="banner">
+					<img src="{% static '' %}images/top-bannner2.jpg" class="img-responsive center-block" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

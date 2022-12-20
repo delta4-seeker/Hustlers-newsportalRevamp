@@ -25,6 +25,7 @@ from user import views as UserViews
 from django.utils.translation import gettext_lazy as _
 
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
 ]
 
 
@@ -36,14 +37,9 @@ urlpatterns += i18n_patterns(
     path('ckeditor/', include('ckeditor_uploader.urls')),
 
 
-    path(_('about/'), views.aboutus, name='aboutus'),
-    path(_('contact/'), views.contactus, name='contactus'),
-    # path('search/', views.search, name='search'),
-    # path('search_auto/', views.search_auto, name='search_auto'),
     path('login/', UserViews.login_form, name='login'),
     path('logout/', UserViews.logout_func, name='logout'),
     path('signup/', UserViews.signup_form, name='signup'),
-    path('faq/', views.faq, name='faq'),
     prefix_default_language=False,
 )+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -4,9 +4,7 @@ from . import views
 #app_name = 'user'
 urlpatterns = [
     path('', views.index, name='user_index'),
-    path('update/', views.user_update, name='user_update'),
-    path('password/', views.user_password, name='user_password'),
-    path('comments/', views.user_comments, name='user_comments'),
-    path('deletecomment/<int:id>', views.user_deletecomment, name='user_deletecomment'),
+    path('magazine/', views.magazine, name='magazine'),
+    path('magazine/<int:id>', views.magazine_detail, name='magazine_detail'),
 
 ]

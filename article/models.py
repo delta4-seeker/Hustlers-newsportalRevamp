@@ -64,6 +64,7 @@ class Article(models.Model):
     writer = models.CharField(max_length=255)
     description = models.TextField(max_length=255)
     image=models.ImageField(upload_to='images/',null=False)
+    audio=models.FileField(upload_to='images/',null=False)
     content=RichTextUploadingField()
     slug = models.SlugField(null=False, unique=True)
     status=models.CharField(max_length=10,choices=STATUS, default='True')
